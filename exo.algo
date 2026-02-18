@@ -1,23 +1,27 @@
 ALGORITHM exo
 VAR
-  phrase:STRING
   longeur_phrase:INTEGER
   nombre_de_mot:INTEGER
   nombre_de_voyelle:INTEGER
   charactere:CHAR
 
 BEGIN
-  Read(phrase)
   longeur_phrase:=0
   nombre_de_mot:=0
   nombre_de_voyelle:=0
+  charactere=""
   WHILE (charactere<>".") DO
-    Write("longeur de la phrase est : " longeur_phrase=longeur_phrase+1)
+    Read(charactere)
+    phrase=phrase+charactere
+    longeur_phrase=longeur_phrase+1
+    Write("longeur de la phrase est : " , longeur_phrase )
     IF (charactere=" ") THEN
-      Write("le nombre de mot dans cette phrase :" nombre_de_mot=nombre_de_mot+1)
+      nombre_de_mot=nombre_de_mot+1
+      Write("le nombre de mot dans cette phrase :" ,nombre_de_mot )
     END_IF
     IF (charactere="a" or charactere="i" or  charactere="e" or charactere="y" or charactere="u" or or charactere="o") THEN
       nombre_de_voyelle=nombre_de_voyelle+1
+      Write("le nombre de voyelle est :" , nombre_de_voyelle)
     END_IF
   END_WHILE
 END
